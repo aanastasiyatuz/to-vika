@@ -21,8 +21,14 @@ def filter(text_):
         text_[text_.index(i)] = i.text
     return text_
 
-data = parsing()
-titles = []
-for i, title in enumerate(data):
-    if i.split(' ')[0] == 'Статья':
-        titles.append(i)
+text = parsing()
+text = '\n'.join(text).split('Статья')
+data = {}
+
+for p in text:
+    if p:
+        i = int(str(p.split(' ')[1][:-1]))
+        ' '.join(p)
+        data[i] = 'Статья' + p
+        print(data)
+print(data)
